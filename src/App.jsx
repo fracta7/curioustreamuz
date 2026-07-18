@@ -1,5 +1,13 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
-import { Aperture, Camera, Code2, Mail, Github, Instagram, ArrowUpRight } from "lucide-react";
+import {
+  Aperture,
+  Camera,
+  Code2,
+  Mail,
+  Github,
+  Instagram,
+  ArrowUpRight,
+} from "lucide-react";
 
 /**
  * PORTFOLIO — sample draft
@@ -39,8 +47,9 @@ import { Aperture, Camera, Code2, Mail, Github, Instagram, ArrowUpRight } from "
 
 const BRAND = "CuriouStream";
 const DOMAIN = "curioustream.uz";
-const NAME = "N. Kato";
-const TAGLINE = "ESL teacher — night sky, streets, and side projects on the side";
+const NAME = "Javokhir";
+const TAGLINE =
+  "ESL teacher — night sky, streets, and side projects on the side";
 
 const CATEGORIES = [
   {
@@ -48,37 +57,73 @@ const CATEGORIES = [
     label: "Astrophotography",
     icon: Aperture,
     fields: ["Object", "Exposure", "Optics", "Location"],
-    blurb: "Deep-sky and wide-field work, stacked from home and from dark-sky sites.",
+    blurb:
+      "Deep-sky and wide-field work, stacked from home and from dark-sky sites.",
     items: [
       {
         title: "Andromeda Galaxy",
-        gradient: "linear-gradient(160deg,#141a3d 0%,#2a2f6b 45%,#4a3a7a 75%,#141a3d 100%)",
-        data: { Object: "M31", Exposure: "4h 12m", Optics: "130mm APO refractor", Location: "Cherry Springs, PA" },
+        gradient:
+          "linear-gradient(160deg,#141a3d 0%,#2a2f6b 45%,#4a3a7a 75%,#141a3d 100%)",
+        data: {
+          Object: "M31",
+          Exposure: "4h 12m",
+          Optics: "130mm APO refractor",
+          Location: "Cherry Springs, PA",
+        },
       },
       {
         title: "Orion Nebula",
-        gradient: "linear-gradient(160deg,#1a1230 0%,#4a1f4f 40%,#7a3350 70%,#1a1230 100%)",
-        data: { Object: "M42", Exposure: "2h 40m", Optics: "8\" Newtonian", Location: "Atacama Desert, CL" },
+        gradient:
+          "linear-gradient(160deg,#1a1230 0%,#4a1f4f 40%,#7a3350 70%,#1a1230 100%)",
+        data: {
+          Object: "M42",
+          Exposure: "2h 40m",
+          Optics: '8" Newtonian',
+          Location: "Atacama Desert, CL",
+        },
       },
       {
         title: "Milky Way over the Ridge",
-        gradient: "linear-gradient(180deg,#0c1024 0%,#1c2450 55%,#3a2e4a 80%,#151022 100%)",
-        data: { Object: "Galactic core panorama", Exposure: "45s × 18", Optics: "14mm f/1.8", Location: "Alabama Hills, CA" },
+        gradient:
+          "linear-gradient(180deg,#0c1024 0%,#1c2450 55%,#3a2e4a 80%,#151022 100%)",
+        data: {
+          Object: "Galactic core panorama",
+          Exposure: "45s × 18",
+          Optics: "14mm f/1.8",
+          Location: "Alabama Hills, CA",
+        },
       },
       {
         title: "Lunar Terminator",
         gradient: "linear-gradient(160deg,#1b1b28 0%,#3d3d4f 50%,#61616f 100%)",
-        data: { Object: "Copernicus crater", Exposure: "1/125s", Optics: "9.25\" SCT", Location: "Backyard observatory" },
+        data: {
+          Object: "Copernicus crater",
+          Exposure: "1/125s",
+          Optics: '9.25" SCT',
+          Location: "Backyard observatory",
+        },
       },
       {
         title: "Perseid Meteor",
-        gradient: "linear-gradient(160deg,#0e1330 0%,#242a5e 45%,#3d3a70 75%,#12102a 100%)",
-        data: { Object: "Single frame, radiant peak", Exposure: "20s", Optics: "24mm f/1.4", Location: "Cherry Springs, PA" },
+        gradient:
+          "linear-gradient(160deg,#0e1330 0%,#242a5e 45%,#3d3a70 75%,#12102a 100%)",
+        data: {
+          Object: "Single frame, radiant peak",
+          Exposure: "20s",
+          Optics: "24mm f/1.4",
+          Location: "Cherry Springs, PA",
+        },
       },
       {
         title: "Rosette Nebula",
-        gradient: "linear-gradient(160deg,#170f28 0%,#552244 45%,#7a3a2e 75%,#170f28 100%)",
-        data: { Object: "NGC 2237", Exposure: "6h 30m", Optics: "80mm APO refractor", Location: "Remote hosted rig" },
+        gradient:
+          "linear-gradient(160deg,#170f28 0%,#552244 45%,#7a3a2e 75%,#170f28 100%)",
+        data: {
+          Object: "NGC 2237",
+          Exposure: "6h 30m",
+          Optics: "80mm APO refractor",
+          Location: "Remote hosted rig",
+        },
       },
     ],
   },
@@ -92,32 +137,63 @@ const CATEGORIES = [
       {
         title: "Fog, Green Mountains",
         gradient: "linear-gradient(160deg,#3a3a34 0%,#6b6a5c 50%,#a6a08a 100%)",
-        data: { Location: "Vermont", Camera: "35mm film", Lens: "85mm", Aperture: "f/2" },
+        data: {
+          Location: "Vermont",
+          Camera: "35mm film",
+          Lens: "85mm",
+          Aperture: "f/2",
+        },
       },
       {
         title: "Night Market",
-        gradient: "linear-gradient(160deg,#241a12 0%,#6b3a1e 45%,#a35a24 80%,#241a12 100%)",
-        data: { Location: "Chiang Mai, TH", Camera: "Mirrorless", Lens: "35mm", Aperture: "f/1.8" },
+        gradient:
+          "linear-gradient(160deg,#241a12 0%,#6b3a1e 45%,#a35a24 80%,#241a12 100%)",
+        data: {
+          Location: "Chiang Mai, TH",
+          Camera: "Mirrorless",
+          Lens: "35mm",
+          Aperture: "f/1.8",
+        },
       },
       {
         title: "Portrait, Window Light",
         gradient: "linear-gradient(160deg,#2e2620 0%,#5c4a3a 50%,#8a715a 100%)",
-        data: { Location: "Studio", Camera: "Mirrorless", Lens: "50mm", Aperture: "f/1.4" },
+        data: {
+          Location: "Studio",
+          Camera: "Mirrorless",
+          Lens: "50mm",
+          Aperture: "f/1.4",
+        },
       },
       {
         title: "Low Tide",
         gradient: "linear-gradient(180deg,#2a3438 0%,#4e6268 55%,#8a9a94 100%)",
-        data: { Location: "Normandy coast, FR", Camera: "Mirrorless", Lens: "24mm", Aperture: "f/8" },
+        data: {
+          Location: "Normandy coast, FR",
+          Camera: "Mirrorless",
+          Lens: "24mm",
+          Aperture: "f/8",
+        },
       },
       {
         title: "Commuters",
         gradient: "linear-gradient(160deg,#1c1c22 0%,#3e3e4a 50%,#6a6a76 100%)",
-        data: { Location: "Tokyo Station, JP", Camera: "Rangefinder", Lens: "35mm", Aperture: "f/2.8" },
+        data: {
+          Location: "Tokyo Station, JP",
+          Camera: "Rangefinder",
+          Lens: "35mm",
+          Aperture: "f/2.8",
+        },
       },
       {
         title: "Harvest",
         gradient: "linear-gradient(160deg,#332616 0%,#6e5324 50%,#a4832e 100%)",
-        data: { Location: "Family farm", Camera: "35mm film", Lens: "50mm", Aperture: "f/2.5" },
+        data: {
+          Location: "Family farm",
+          Camera: "35mm film",
+          Lens: "50mm",
+          Aperture: "f/2.5",
+        },
       },
     ],
   },
@@ -131,32 +207,62 @@ const CATEGORIES = [
       {
         title: "Waypoint — trip planner",
         gradient: "linear-gradient(160deg,#0e2a2e 0%,#1c5e5f 55%,#2e8a86 100%)",
-        data: { Stack: "React Native, Node", Role: "Solo dev", Platform: "iOS / Android", Year: "2025" },
+        data: {
+          Stack: "React Native, Node",
+          Role: "Solo dev",
+          Platform: "iOS / Android",
+          Year: "2025",
+        },
       },
       {
         title: "Ledger — finance tracker",
         gradient: "linear-gradient(160deg,#101a2e 0%,#1e3a5f 55%,#2e5c8a 100%)",
-        data: { Stack: "Swift, CoreData", Role: "Design + dev", Platform: "iOS", Year: "2024" },
+        data: {
+          Stack: "Swift, CoreData",
+          Role: "Design + dev",
+          Platform: "iOS",
+          Year: "2024",
+        },
       },
       {
         title: "Cadence — habit tracker",
         gradient: "linear-gradient(160deg,#161226 0%,#3a2a5c 55%,#5c3e8a 100%)",
-        data: { Stack: "React, Supabase", Role: "Frontend", Platform: "Web", Year: "2025" },
+        data: {
+          Stack: "React, Supabase",
+          Role: "Frontend",
+          Platform: "Web",
+          Year: "2025",
+        },
       },
       {
         title: "Field Notes — this site",
         gradient: "linear-gradient(160deg,#221515 0%,#5c2e2a 55%,#8a4a3e 100%)",
-        data: { Stack: "Next.js", Role: "Solo dev", Platform: "Web", Year: "2026" },
+        data: {
+          Stack: "Next.js",
+          Role: "Solo dev",
+          Platform: "Web",
+          Year: "2026",
+        },
       },
       {
         title: "Aperture — EXIF organizer",
         gradient: "linear-gradient(160deg,#1a1c12 0%,#4a4e26 55%,#7a8038 100%)",
-        data: { Stack: "Electron, Rust", Role: "Solo dev", Platform: "Desktop", Year: "2023" },
+        data: {
+          Stack: "Electron, Rust",
+          Role: "Solo dev",
+          Platform: "Desktop",
+          Year: "2023",
+        },
       },
       {
         title: "Nightlog — session logger",
         gradient: "linear-gradient(160deg,#0c0f24 0%,#1e2a5c 55%,#32448a 100%)",
-        data: { Stack: "SwiftUI", Role: "Solo dev", Platform: "iOS", Year: "2024" },
+        data: {
+          Stack: "SwiftUI",
+          Role: "Solo dev",
+          Platform: "iOS",
+          Year: "2024",
+        },
       },
     ],
   },
@@ -191,7 +297,9 @@ function Starfield({ reduceMotion }) {
       const { width, height } = canvas.getBoundingClientRect();
       ctx.clearRect(0, 0, width, height);
       for (const s of stars) {
-        const twinkle = reduceMotion ? 0.75 : 0.55 + 0.45 * Math.sin(t * s.speed + s.phase);
+        const twinkle = reduceMotion
+          ? 0.75
+          : 0.55 + 0.45 * Math.sin(t * s.speed + s.phase);
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(237,234,224,${twinkle.toFixed(3)})`;
@@ -277,8 +385,14 @@ export default function Portfolio() {
     return () => mq.removeEventListener("change", handler);
   }, []);
 
-  const current = useMemo(() => CATEGORIES.find((c) => c.id === active), [active]);
-  const totalFrames = useMemo(() => CATEGORIES.reduce((n, c) => n + c.items.length, 0), []);
+  const current = useMemo(
+    () => CATEGORIES.find((c) => c.id === active),
+    [active],
+  );
+  const totalFrames = useMemo(
+    () => CATEGORIES.reduce((n, c) => n + c.items.length, 0),
+    [],
+  );
 
   return (
     <div className="page">
@@ -441,16 +555,23 @@ export default function Portfolio() {
         <Starfield reduceMotion={reduceMotion} />
         <div className="hero-inner">
           <div className="hero-eyebrow mono">{TAGLINE}</div>
-          <h1>I teach English for a living. Everything below is what I do after class.</h1>
+          <h1>
+            I teach English for a living. Everything below is what I do after
+            class.
+          </h1>
           <p>
             By day I teach ESL. Evenings and weekends go to whatever's pointed a
             lens, or a laptop, at something worth paying attention to: galaxies,
             city streets, and small apps built to organize the other two.
           </p>
           <div className="hero-stat">
-            <span><span className="mono">{totalFrames}</span> frames</span>
+            <span>
+              <span className="mono">{totalFrames}</span> frames
+            </span>
             <span>·</span>
-            <span>Updated <span className="mono">Jan 2026</span></span>
+            <span>
+              Updated <span className="mono">Jan 2026</span>
+            </span>
           </div>
         </div>
       </header>
@@ -465,7 +586,11 @@ export default function Portfolio() {
         <DialNav categories={CATEGORIES} active={active} onSelect={setActive} />
         <div className="grid">
           {current.items.map((item) => (
-            <ExposureCard key={item.title} item={item} fields={current.fields} />
+            <ExposureCard
+              key={item.title}
+              item={item}
+              fields={current.fields}
+            />
           ))}
         </div>
       </section>
@@ -474,16 +599,16 @@ export default function Portfolio() {
         <h2>About</h2>
         <div>
           <p>
-            I teach English to adult learners, mostly conversation and exam prep,
-            and have for the better part of a decade. It's close reading, a lot of
-            listening, and a fair amount of patience — most of which turns out to
-            transfer well to a telescope.
+            I teach English to young learners, mostly conversation and exam
+            prep, and have for the better part of a decade. It's close reading,
+            a lot of listening, and a fair amount of patience — most of which
+            turns out to transfer well to a lens.
           </p>
           <p>
-            The camera came first, as a way to get away from a screen after a day
-            of lesson planning. The telescope followed once I ran out of things to
-            photograph during daylight. The apps came last, mostly to keep the
-            other two organized.
+            The camera came first, as a way to get away from a screen after a
+            day of lesson planning. The lens followed once I ran out of things
+            to photograph during daylight. The apps came last, mostly to keep
+            the other two organized.
           </p>
           <p>
             This site is a record of the second kind of hour — not the classroom
@@ -495,14 +620,25 @@ export default function Portfolio() {
       <section className="section contact" id="contact">
         <h2>Say hello, or send coordinates.</h2>
         <div className="contact-links">
-          <a href="mailto:hello@example.com"><Mail size={16} strokeWidth={1.75} />hello@example.com</a>
-          <a href="https://github.com/example"><Github size={16} strokeWidth={1.75} />github</a>
-          <a href="https://instagram.com/example"><Instagram size={16} strokeWidth={1.75} />instagram</a>
+          <a href="mailto:fracta7@gmail.com">
+            <Mail size={16} strokeWidth={1.75} />
+            fracta7@gmail.com
+          </a>
+          <a href="https://github.com/fracta7">
+            <Github size={16} strokeWidth={1.75} />
+            github
+          </a>
+          <a href="https://instagram.com/javokhir_mat">
+            <Instagram size={16} strokeWidth={1.75} />
+            instagram
+          </a>
         </div>
       </section>
 
       <footer className="footer">
-        <span>&copy; {new Date().getFullYear()} {BRAND} — {NAME}</span>
+        <span>
+          &copy; {new Date().getFullYear()} {BRAND} — {NAME}
+        </span>
         <span className="mono">{DOMAIN}</span>
       </footer>
     </div>
